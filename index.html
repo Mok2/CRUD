@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>BookMark</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@100&family=Amatic+SC&family=Pacifico&family=Roboto:wght@100&family=Source+Sans+3&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="alertbox-b" class=" h-100 w-100 d-flex justify-content-center align-items-center position-absolute d-none  ">
+        <div id="alertbox" class="w-25 bg-white py-5 ps-4  z-5 shadow-lg ">
+            <div class="circels w-100 position-relative">
+               <button onclick="CloseBtn()" class="btn-close fw-bolder"> </button>
+                <div class=" rounded-circle bg-danger pe-2 d-inline-flex"></div>
+                <div class=" rounded-circle bg-info pe-2 d-inline-flex "></div>
+                <div class=" rounded-circle bg-warning pe-2 d-inline-flex "></div>
+            </div>
+            <div class="w-100 fs-4 fw-bold ">Site Name or URL Is not valid. Please Follow the rules below:</div>
+                <div class="w-100 mt-4"><i class="fs-4 fa-regular fa-circle-right text-danger"></i> Site name must contain at least 3 characters.</div>
+                <div class="w-100 mt-4"><i class="fs-4 fa-regular fa-circle-right text-danger"></i> Site URL must be a valid one.</div>
+        </div>
+    </div>
+    <div id="container">
+        <div id="mini-container">
+            <!-------------------------------BookMark Title- Start--------------------------------------->
+            <div id="Title" class="TextCenter FontFamily">
+                <h1>Bookmarker</h1>
+            </div>
+            <!-------------------------------BookMark Title End------------------------------------------>
+            <!-------------------------------BookMark main content Start----------------------------------------->
+            <div id="main-content" class="pb-2">
+                <div class="main-content-title TextCenter">
+                    <h2><i class="fa-solid fa-bookmark"></i>
+                        <div> Bookmark your favorite sites </div> <i class="fa-solid fa-bookmark"></i>
+                    </h2>
+                </div>
+                <div class="content-inputs">
+                    <form class="mx-3" >
+                        <div class="NameInput">
+                            <label for="SiteName"><i class=" fa-solid fa-book-bookmark"> </i> <b>Site Name</b>
+                            </label>
+                            <input oninput="RegexName ()" id="SiteName" type="text" placeholder="Bookmark Name"
+                                class="w-100 py-2 ps-2 border-0 shadow-sm mt-2 form-control">
+                                <div id="NameGuide" class="w-100 bg-danger text-white p-2 fs-5 d-none ">Minimum 3 Letter || Maximum 10 Letter  </div>
+                        </div>
+                        <div class="URLInput mt-4 ">
+                            <label for="SiteURL"><i class="fa-solid fa-link"> </i> <b>Site URL</b>
+                            </label>
+                            <input oninput="RegexURL()" id="SiteURL" type="url" placeholder="Website URL" value="https://" 
+                                class="w-100 py-2 ps-2 border-0 shadow-sm mt-2 form-control ">
+                                <div id="URLGuide" class="w-100 bg-danger text-white p-2 fs-5 d-none ">URL Like "https://www.test.com" </div>
+                        </div >
+                    </form>
+                    <div class="w-100 text-center"><button onclick="AddSite ()" class="btn btn-danger px-5 my-4">Submit </button></div>
+                </div>
+            </div>
+            <!-------------------------------BookMark main content End----------------------------------------->
+            <!-------------------------------BookMark Table Show Start----------------------------------------->
+            <div id="content-table" class="my-3">
+                <table class="table w-100 text-center">
+                    <thead>
+                        <tr>
+                        <th>Index</th>
+                        <th>Website Name</th>
+                        <th>Visit</th>
+                        <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody id="TableData">
+                  
+                    </tbody>
+                </table>
+            </div>
+            <!-------------------------------BookMark Table Show End----------------------------------------->
+        </div>
+       
+    </div>
+   
+    <script src="js/js.js"></script>
+</body>
+
+</html>

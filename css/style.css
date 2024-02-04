@@ -1,0 +1,86 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+body{
+    background-color: #F7ECDE;  
+}
+/* global style */
+.TextCenter{
+    text-align: center;
+}
+.FontFamily{
+    font-family: 'Pacifico', cursive;
+}
+/* Container*/
+#container{
+    padding-top:4rem ;
+    width:100%;
+    display: flex;
+    justify-content: center;
+}
+#mini-container{
+    width: 70%;
+}
+/*Title*/
+#Title{
+    padding:0 0 2.5rem ;
+    border-bottom: 2px dotted;
+}
+#Title h1{
+    display: inline-flex;
+    font-weight: 500 ;
+    font-size: 3em;
+    position: relative;
+   
+}
+#Title h1::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 30%;
+    z-index:-1;
+    background-color: #FEC260;
+    transition:  .2s;
+}
+#Title h1:hover::after{
+    height: 80%;
+}
+
+/* main content */
+#main-content .main-content-title h2{
+    margin:2rem 0;
+    font-size: 1.7rem;
+    display: inline-flex;
+background:linear-gradient(to right,#3DA55C 40%,#B3AC4A) ;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+align-items: center;
+}
+#main-content .main-content-title h2 div{
+    padding:0 .2rem;
+}
+#main-content{
+    border-bottom: dotted 2px;
+}
+/* alertbox */
+#alertbox-b{
+    background-color: #0007;
+    opacity: 1;
+    z-index: 0;
+}
+#alertbox .circels div{
+width: 20px;
+height:20px;
+}
+#alertbox .circels button{
+    position: absolute;
+    right: 50px;
+}
